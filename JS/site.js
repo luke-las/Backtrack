@@ -16,6 +16,6 @@ function reverseString(startValue){
 //display the reversed string on the page
 function displayString(stringReversed){
     
-    let templateRows = `<tr><td>${stringReversed}</tr></td>`
+    let templateRows = `<p>${stringReversed}</p>`
     document.getElementById("results").innerHTML = templateRows;
 }
