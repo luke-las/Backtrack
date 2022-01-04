@@ -50,20 +50,45 @@
 <!-- main section -->
 <main class="flex-shrink-0">
     <div class="container px-5 py-5 mt-5">
-        <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+        <h2 class="border-1 border-bottom border-dark">The Code for Backtrack</h2>
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col-lg-8">
                 <pre class="line-numbers"><code class="language-javascript">
-                    //call hello
-                    function helloWorld(){
-                        alert("hello world!");
+                    function getValues(){
+                        let startValue = document.getElementById("startValue").value;
+                        let stringReversed = reverseString(startValue);
+                        displayString(stringReversed);
                     }
+                    
+                    //reverse the string
+                    function reverseString(startValue){
+                        let stringReversed = "";
+                        for(i=startValue.length-1; i>=0; i--){
+                            stringReversed += startValue[i];
+                        }
+                        return stringReversed;
+                    }
+                    
+                    //display the reversed string on the page
+                    function displayString(stringReversed){
+                        //Prism does not fully display this code.
+                        //For the full code visit the github repo.
+                        let templateRows = `<tr><td>${stringReversed}</tr></td>`
+                        document.getElementById("results").innerHTML = templateRows;
+                    }
+                    
                 </code></pre>
             </div>
             <div class="col-lg-4">
-                <p>The Code is structured in one function.</p>
-                <h5>Hello World</h5>
-                <p>Hello world is a function that displays an alert with a message of "Hello World".</p>
+                <p></p>
+                <h5>function getValues()</h5>
+                <p>Function getValues collects the starting string value from the form.</p>
+                <br><br><br>
+                <h5>function reverseString</h5>
+                <p>reverseString accepts the string value from getValues, and then with a backward for loop casts each index in reverse to return a new variable; stringReversed.</p>
+                <br><br><br><br>
+                <h5>function displayString</h5>
+                <p>Function displayString accepts the parameter of stringReversed, and then casts it to templateRows which is returned to the app.html page. </p>
             </div>
         </div>    
     </div>
